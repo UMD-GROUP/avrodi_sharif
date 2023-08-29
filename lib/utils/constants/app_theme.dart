@@ -8,6 +8,7 @@ class AppTheme {
       hintColor: Colors.black);
   static ThemeData dark = ThemeData(
       fontFamily: "Inter",
+      focusColor: Colors.black,
       hintColor: Colors.white,
       backgroundColor: Colors.black);
 }

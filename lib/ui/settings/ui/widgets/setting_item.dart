@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -10,7 +11,6 @@ class SettingItem extends StatefulWidget {
 }
 
 class _SettingItemState extends State<SettingItem> {
-  bool isDark = false;
   @override
   Widget build(BuildContext context) {
     return OnTap(
@@ -37,20 +37,33 @@ class _SettingItemState extends State<SettingItem> {
             children: [
               Row(
                 children: [
-                  SvgPicture.asset(widget.settings.icon),
+                  SvgPicture.asset(widget.settings.icon,
+                      color: AdaptiveTheme.of(context).theme.hintColor),
                   SizedBox(width: 8.h),
-                  Text(widget.settings.title,
-                      style: AppTextStyles.labelLarge(context, fontSize: 16.h)),
+                  BlocBuilder<SettingsBloc, SettingsState>(
+                    builder: (context, state) {
+                      return Text(widget.settings.title,
+                          style: AppTextStyles.labelLarge(context,
+                              fontSize: state.fontSize.toDouble()));
+                    },
+                  ),
                 ],
               ),
               Visibility(
                   visible: widget.settings.type == SettingItemType.switcher,
                   child: CupertinoSwitch(
                     onChanged: (value) {
-                      isDark = value;
-                      setState(() {});
+                      if (AdaptiveTheme.of(context).mode ==
+                          AdaptiveThemeMode.dark) {
+                        AdaptiveTheme.of(context)
+                            .setThemeMode(AdaptiveThemeMode.light);
+                      } else {
+                        AdaptiveTheme.of(context)
+                            .setThemeMode(AdaptiveThemeMode.dark);
+                      }
                     },
-                    value: isDark,
+                    value: AdaptiveTheme.of(context).mode ==
+                        AdaptiveThemeMode.dark,
                   ))
             ],
           ),

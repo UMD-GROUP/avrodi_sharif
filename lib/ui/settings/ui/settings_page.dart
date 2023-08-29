@@ -1,5 +1,3 @@
-import 'package:avrodi_sharif/ui/settings/data/models/setting_item_model.dart';
-import 'package:avrodi_sharif/ui/settings/ui/widgets/setting_item.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class SettingsPage extends StatelessWidget {

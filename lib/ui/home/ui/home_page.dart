@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class HomePage extends StatelessWidget {
@@ -36,9 +37,13 @@ class HomePage extends StatelessWidget {
                             height: height(context) * 0.06,
                             width: width(context),
                             child: Center(
-                              child: Text("Ижодхона",
-                                  style: AppTextStyles.labelLarge(context,
-                                      fontSize: 16.h)),
+                              child: BlocBuilder<SettingsBloc, SettingsState>(
+                                builder: (context, state) {
+                                  return Text("Ижодхона",
+                                      style: AppTextStyles.labelLarge(context,
+                                          fontSize: state.fontSize.toDouble()));
+                                },
+                              ),
                             ),
                           ),
                         ),

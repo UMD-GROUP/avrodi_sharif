@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class MenuButton extends StatelessWidget {
@@ -27,9 +28,14 @@ class MenuButton extends StatelessWidget {
               const Spacer(),
               SvgPicture.asset(data.icon),
               const Spacer(),
-              Text(data.title,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.labelLarge(context, fontSize: 16.h)),
+              BlocBuilder<SettingsBloc, SettingsState>(
+                builder: (context, state) {
+                  return Text(data.title,
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.labelLarge(context,
+                          fontSize: state.fontSize.toDouble()));
+                },
+              ),
               const Spacer(),
               const Spacer()
             ],

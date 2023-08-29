@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class App extends StatelessWidget {
@@ -5,7 +6,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyApp();
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+            create: (context) => SettingsBloc()..add(GetFontSizeEvent()))
+      ],
+      child: MyApp(),
+    );
   }
 }
 
