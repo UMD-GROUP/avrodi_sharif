@@ -16,4 +16,14 @@ class AppIcons {
   static const bookmark = "$iconPath/bookmark.svg";
   static const askQuestion = "$iconPath/ask_question.svg";
   static const others = "$iconPath/others.svg";
+  static const starBook = "$iconPath/star_book.svg";
+  static const starHands = "$iconPath/hand_star.svg";
+  static const starWord = "$iconPath/star_word.svg";
+  static const monday = "$iconPath/monday.svg";
+  static const tuesday = "$iconPath/tuesday.svg";
+  static const wednesday = "$iconPath/wednesday.svg";
+  static const thursday = "$iconPath/thursday.svg";
+  static const friday = "$iconPath/friday.svg";
+  static const saturday = "$iconPath/saturday.svg";
+  static const sunday = "$iconPath/sunday.svg";
 }

@@ -5,6 +5,37 @@ class DailyZikrPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      body: SafeArea(
+        child: Column(
+          children: [
+            GlobalAppBar(AppBarType.withSettingsAndPop,
+                title: "Ҳар кунги зикрлар"),
+            Padding(
+              padding: EdgeInsets.all(20.h),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ZikrItem(
+                          title: "Қуръон оятлари", icon: AppIcons.starBook),
+                      ZikrItem(
+                          title: "Хадисдаги дуолар", icon: AppIcons.starHands),
+                    ],
+                  ),
+                  SizedBox(height: 20.h),
+                  ZikrItem(
+                      title: "Аллоҳнинг 99 исми",
+                      icon: AppIcons.starWord,
+                      zikrWidth: width(context))
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

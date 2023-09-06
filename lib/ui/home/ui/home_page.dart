@@ -1,4 +1,3 @@
-import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class HomePage extends StatelessWidget {
@@ -54,6 +53,7 @@ class HomePage extends StatelessWidget {
                           height: height(context) * 0.35,
                           width: width(context),
                           child: GridView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: 4,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
@@ -78,10 +78,19 @@ class HomePage extends StatelessWidget {
                                 children: [
                                   SmButton(
                                       icon: AppIcons.telegram,
-                                      url: 'https://t.me/ahadjonovss'),
-                                  SmButton(icon: AppIcons.youtube, url: ''),
-                                  SmButton(icon: AppIcons.facebook, url: ''),
-                                  SmButton(icon: AppIcons.instagram, url: ''),
+                                      url: 'https://t.me/m_kenjabek'),
+                                  SmButton(
+                                      icon: AppIcons.youtube,
+                                      url:
+                                          'https://www.youtube.com/@user-yq7sf7zt8i'),
+                                  SmButton(
+                                      icon: AppIcons.facebook,
+                                      url:
+                                          'https://www.facebook.com/hiloldasturlari'),
+                                  SmButton(
+                                      icon: AppIcons.instagram,
+                                      url:
+                                          'https://instagram.com/mirzokenjabek?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D'),
                                 ],
                               ),
                             ),

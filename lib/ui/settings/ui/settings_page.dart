@@ -14,7 +14,7 @@ class SettingsPage extends StatelessWidget {
           child: Column(
             children: [
               GlobalAppBar(
-                AppBarType.withSettingsAndPop,
+                AppBarType.withoutSettings,
                 title: "Созламалар",
               ),
               Padding(

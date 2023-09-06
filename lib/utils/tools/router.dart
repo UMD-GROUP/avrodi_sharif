@@ -1,4 +1,6 @@
 import 'package:avrodi_sharif/ui/settings/ui/sub_screens/setting_page.dart';
+import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
+import 'package:avrodi_sharif/ui/zikr/ui/zikr_page.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 abstract class RouteName {
@@ -11,6 +13,7 @@ abstract class RouteName {
   static const weeklyZikr = '/weeklyZikr';
   static const dailyZikr = '/dailyZikr';
   static const setting = '/setting';
+  static const zikr = '/zikr';
 }
 
 class AppRoutes {
@@ -33,6 +36,9 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SettingsPage());
       case RouteName.creationRoom:
         return MaterialPageRoute(builder: (_) => const CreationRoomPage());
+      case RouteName.zikr:
+        return MaterialPageRoute(
+            builder: (_) => ZikrPage(data: args as ZikrInputModel));
       case RouteName.setting:
         return MaterialPageRoute(
             builder: (_) => SettingPage(

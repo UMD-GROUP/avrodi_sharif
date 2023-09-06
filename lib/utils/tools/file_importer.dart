@@ -4,6 +4,7 @@ export 'package:avrodi_sharif/service/storage_service/storage_service.dart';
 export 'package:avrodi_sharif/ui/about/ui/about_page.dart';
 export 'package:avrodi_sharif/ui/creation_room/ui/creation_room_page.dart';
 export 'package:avrodi_sharif/ui/dailly_zikr/ui/daily_zikr_page.dart';
+export 'package:avrodi_sharif/ui/dailly_zikr/ui/widgets/zikr_item.dart';
 export 'package:avrodi_sharif/ui/home/data/models/menu_item_model.dart';
 export 'package:avrodi_sharif/ui/home/ui/home_page.dart';
 export 'package:avrodi_sharif/ui/home/ui/widgets/menu_button.dart';

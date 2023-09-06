@@ -6,6 +6,7 @@ class VirtueOfDuaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
       body: SafeArea(
         child: SizedBox(
           height: height(context),

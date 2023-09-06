@@ -28,7 +28,8 @@ class GlobalAppBar extends StatelessWidget {
               style: AppTextStyles.labelLarge(context,
                   fontWeight: FontWeight.w500, fontSize: 20.h)),
           Visibility(
-            visible: type != AppBarType.withoutSettingsAndPop,
+            visible: type != AppBarType.withoutSettingsAndPop &&
+                type != AppBarType.withoutSettings,
             child: AppButton(
               icon: AppIcons.settings,
               onTap: () {
@@ -36,6 +37,7 @@ class GlobalAppBar extends StatelessWidget {
               },
             ),
           ),
+          if (type == AppBarType.withoutSettings) SizedBox(width: 6.h),
         ],
       ),
     );

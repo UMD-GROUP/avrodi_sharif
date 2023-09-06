@@ -15,7 +15,7 @@ class BookMarkItem extends StatelessWidget {
           ],
           color: AdaptiveTheme.of(context).theme.backgroundColor,
           borderRadius: BorderRadius.circular(10.h)),
-      padding: EdgeInsets.symmetric(horizontal: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.h),
       margin: EdgeInsets.only(top: 16.h),
       child: Row(
         children: [

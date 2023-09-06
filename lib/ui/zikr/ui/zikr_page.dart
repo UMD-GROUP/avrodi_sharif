@@ -1,7 +1,9 @@
+import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
-class CreationRoomPage extends StatelessWidget {
-  const CreationRoomPage({super.key});
+class ZikrPage extends StatelessWidget {
+  ZikrInputModel data;
+  ZikrPage({required this.data, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class CreationRoomPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона")
+            GlobalAppBar(AppBarType.withSettingsAndPop, title: data.title),
           ],
         ),
       ),
