@@ -6,3 +6,5 @@ enum AppBarType {
 }
 
 enum SettingItemType { switcher, url, route }
+
+enum ResponseStatus { pure, inProgress, inSuccess, inFail }
