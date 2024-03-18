@@ -13,6 +13,8 @@ class ZikrPage extends StatelessWidget {
         child: Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: data.title),
+            Text(
+                "اِذْ هَمَّتْ طَٓائِفَتَانِ مِنْكُمْ اَنْ تَفْشَلَاۙ وَاللّٰهُ وَلِيُّهُمَاۜ وَعَلَى اللّٰهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ   ۝   وَلَقَدْ نَصَرَكُمُ اللّٰهُ بِبَدْرٍ وَاَنْتُمْ اَذِلَّةٌۚ فَاتَّقُوا اللّٰهَ لَعَلَّكُمْ تَشْكُرُونَ   ۝")
           ],
         ),
       ),

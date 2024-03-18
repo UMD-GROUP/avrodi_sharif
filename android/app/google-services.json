@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092874167296",
+    "project_id": "avrodi-sharif",
+    "storage_bucket": "avrodi-sharif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092874167296:android:313db2a49ba7050509e4e5",
+        "android_client_info": {
+          "package_name": "com.uzmobdev.avrodisharif.avrodi_sharif"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092874167296-g2ib43nnqjj25d179ep8r19ga8ogoo4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8OXH_BImHwePyv2uk0_dyELAyAO-Qa3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092874167296-g2ib43nnqjj25d179ep8r19ga8ogoo4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
