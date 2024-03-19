@@ -22,10 +22,12 @@ class SettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: 5,
-                        itemBuilder: (context, index) =>
-                            SettingItem(settings: settingItems[index]))
+                      shrinkWrap: true,
+                      itemCount: 5,
+                      itemBuilder: (context, index) => SettingItem(
+                        settings: settingItems[index],
+                      ),
+                    ),
                   ],
                 ),
               )
