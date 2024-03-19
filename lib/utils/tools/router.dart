@@ -38,7 +38,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const CreationRoomPage());
       case RouteName.zikr:
         return MaterialPageRoute(
-          builder: (_) => ZikrPage(data: args as ZikrInputModel),
+          builder: (_) => ZikrPage(args as ZikrInputModel)
         );
       case RouteName.setting:
         return MaterialPageRoute(

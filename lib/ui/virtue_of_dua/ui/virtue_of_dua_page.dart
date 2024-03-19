@@ -27,7 +27,8 @@ class VirtueOfDuaPage extends StatelessWidget {
                           child: Text(
                              "",
                               style: AppTextStyles.labelLarge(context)),
-                        ))
+                        ),
+                    ),
                   ],
                 ),
               )

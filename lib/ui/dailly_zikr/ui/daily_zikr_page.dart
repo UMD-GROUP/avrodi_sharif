@@ -29,7 +29,8 @@ class DailyZikrPage extends StatelessWidget {
                   ZikrItem(
                       title: "Аллоҳнинг 99 исми",
                       icon: AppIcons.starWord,
-                      zikrWidth: width(context))
+                      zikrWidth: width(context),
+                  )
                 ],
               ),
             ),

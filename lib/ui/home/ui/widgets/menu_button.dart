@@ -3,6 +3,7 @@ import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class MenuButton extends StatelessWidget {
   final MenuItemModel data;
+
   const MenuButton({required this.data, super.key});
 
   @override
@@ -15,7 +16,10 @@ class MenuButton extends StatelessWidget {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  color: Colors.grey.shade300, spreadRadius: 1, blurRadius: 15)
+                color: Colors.grey.shade300,
+                spreadRadius: 1,
+                blurRadius: 15,
+              )
             ],
             color: AdaptiveTheme.of(context).theme.backgroundColor,
             borderRadius: BorderRadius.circular(10.h)),
@@ -30,10 +34,14 @@ class MenuButton extends StatelessWidget {
               const Spacer(),
               BlocBuilder<SettingsBloc, SettingsState>(
                 builder: (context, state) {
-                  return Text(data.title,
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.labelLarge(context,
-                          fontSize: state.fontSize.toDouble()));
+                  return Text(
+                    data.title,
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.labelLarge(
+                      context,
+                      fontSize: state.fontSize.toDouble(),
+                    ),
+                  );
                 },
               ),
               const Spacer(),
