@@ -2,8 +2,8 @@ import 'package:avrodi_sharif/ui/settings/bloc/settings_bloc/settings_bloc.dart'
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class MenuButton extends StatelessWidget {
-  MenuItemModel data;
-  MenuButton({required this.data, super.key});
+  final MenuItemModel data;
+  const MenuButton({required this.data, super.key});
 
   @override
   Widget build(BuildContext context) {

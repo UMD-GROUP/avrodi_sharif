@@ -38,9 +38,13 @@ class HomePage extends StatelessWidget {
                             child: Center(
                               child: BlocBuilder<SettingsBloc, SettingsState>(
                                 builder: (context, state) {
-                                  return Text("Ижодхона",
-                                      style: AppTextStyles.labelLarge(context,
-                                          fontSize: state.fontSize.toDouble()));
+                                  return Text(
+                                    "Ижодхона",
+                                    style: AppTextStyles.labelLarge(
+                                      context,
+                                      fontSize: state.fontSize.toDouble(),
+                                    ),
+                                  );
                                 },
                               ),
                             ),
@@ -60,7 +64,8 @@ class HomePage extends StatelessWidget {
                                       crossAxisCount: 2,
                                       mainAxisSpacing: 10.0,
                                       crossAxisSpacing: 10.0,
-                                      childAspectRatio: 3 / 2.3),
+                                      childAspectRatio: 3 / 2.3,
+                                  ),
                               itemBuilder: (context, index) {
                                 return MenuButton(data: menuItems[index]);
                               })),

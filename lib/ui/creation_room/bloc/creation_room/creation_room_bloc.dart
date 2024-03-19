@@ -4,7 +4,7 @@ part 'creation_room_event.dart';
 part 'creation_room_state.dart';
 
 class CreationRoomBloc extends Bloc<CreationRoomEvent, CreationRoomState> {
-  CreationRoomBloc() : super(CreationRoomState(data: [])) {
+  CreationRoomBloc() : super(CreationRoomState(data: const [])) {
     on<GetDataEvent>(getData);
   }
 

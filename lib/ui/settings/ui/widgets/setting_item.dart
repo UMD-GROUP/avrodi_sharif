@@ -3,8 +3,9 @@ import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 import 'package:flutter/cupertino.dart';
 
 class SettingItem extends StatefulWidget {
-  SettingItemModel settings;
-  SettingItem({required this.settings, super.key});
+  final SettingItemModel settings;
+
+  const SettingItem({required this.settings, super.key});
 
   @override
   State<SettingItem> createState() => _SettingItemState();
@@ -42,29 +43,34 @@ class _SettingItemState extends State<SettingItem> {
                   SizedBox(width: 8.h),
                   BlocBuilder<SettingsBloc, SettingsState>(
                     builder: (context, state) {
-                      return Text(widget.settings.title,
-                          style: AppTextStyles.labelLarge(context,
-                              fontSize: state.fontSize.toDouble()));
+                      return Text(
+                        widget.settings.title,
+                        style: AppTextStyles.labelLarge(
+                          context,
+                          fontSize: state.fontSize.toDouble(),
+                        ),
+                      );
                     },
                   ),
                 ],
               ),
               Visibility(
-                  visible: widget.settings.type == SettingItemType.switcher,
-                  child: CupertinoSwitch(
-                    onChanged: (value) {
-                      if (AdaptiveTheme.of(context).mode ==
-                          AdaptiveThemeMode.dark) {
-                        AdaptiveTheme.of(context)
-                            .setThemeMode(AdaptiveThemeMode.light);
-                      } else {
-                        AdaptiveTheme.of(context)
-                            .setThemeMode(AdaptiveThemeMode.dark);
-                      }
-                    },
-                    value: AdaptiveTheme.of(context).mode ==
-                        AdaptiveThemeMode.dark,
-                  ))
+                visible: widget.settings.type == SettingItemType.switcher,
+                child: CupertinoSwitch(
+                  onChanged: (value) {
+                    if (AdaptiveTheme.of(context).mode ==
+                        AdaptiveThemeMode.dark) {
+                      AdaptiveTheme.of(context)
+                          .setThemeMode(AdaptiveThemeMode.light);
+                    } else {
+                      AdaptiveTheme.of(context)
+                          .setThemeMode(AdaptiveThemeMode.dark);
+                    }
+                  },
+                  value:
+                      AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark,
+                ),
+              ),
             ],
           ),
         ),

@@ -22,9 +22,11 @@ class AboutPage extends StatelessWidget {
                   shrinkWrap: true,
                   children: [
                     Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.h),
-                        child: SingleChildScrollView(
-                          child: Text("""Ушбу авроди шариф....
+                      padding: EdgeInsets.symmetric(horizontal: 20.h),
+                      child: SingleChildScrollView(
+                        child: Text(
+                          """
+Ушбу авроди шариф....
    Бисмиллаҳир роҳманир роҳийм
 Аллоҳ таолога сõзсиз хамду санолар, хазрати Расулуллоҳга чексз салоту саломлар бõлсин.
     Ушбу авроди шариф ер юзидаги энг шарафли энг ишончли дуо китобларидан ҳисобланади. Чунки у мйқаддас Қуръони карим оятлари ва энг сахих хадиси шарифлар асосида тузилган. 
@@ -37,9 +39,12 @@ class AboutPage extends StatelessWidget {
 4) Душанба куни учун таваккул ва хифзу химоят оятлари; 
 5) Сешанба куни учун саломат ва шифо оятлари; 
 6) Чоршанба куни учун таҳлил ("Ла илаҳа иллаллоҳ") оятлари; 
-7) Пайшанба куни учун дуо оятлари..""",
-                              style: AppTextStyles.labelLarge(context)),
-                        ))
+7) Пайшанба куни учун дуо оятлари.""",
+                          style: AppTextStyles.labelLarge(context),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               )

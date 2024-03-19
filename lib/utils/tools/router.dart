@@ -38,12 +38,14 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const CreationRoomPage());
       case RouteName.zikr:
         return MaterialPageRoute(
-            builder: (_) => ZikrPage(data: args as ZikrInputModel));
+          builder: (_) => ZikrPage(data: args as ZikrInputModel),
+        );
       case RouteName.setting:
         return MaterialPageRoute(
-            builder: (_) => SettingPage(
-                  setting: args as SettingItemModel,
-                ));
+          builder: (_) => SettingPage(
+            setting: args as SettingItemModel,
+          ),
+        );
 
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
