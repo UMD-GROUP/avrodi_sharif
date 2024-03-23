@@ -1,9 +1,6 @@
-import 'package:avrodi_sharif/ui/weekly_zikr/data/models/zikr_model.dart';
-import 'package:avrodi_sharif/ui/zikr/data/models/daily_zikr_arab_krill_model.dart';
-import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
+import 'package:avrodi_sharif/ui/zikr/ui/widget/verse_item.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
 
 class ZikrPage extends StatelessWidget {
   final ZikrInputModel zikrInputModel;
@@ -72,16 +69,25 @@ class ZikrPage extends StatelessWidget {
             SizedBox(height: 20.h),
 
             Expanded(
-              child: ListView.builder(
-                  itemCount: dailyModel.length,
-                  itemBuilder: (context,index){
-                return  Column(
-                  children: [
-                    Text(dailyModel[index].arabic,textAlign: TextAlign.right,),
-                    Text(dailyModel[index].russian,textAlign: TextAlign.left,),
-                  ],
-                );
-              }
+              child: ListView(
+
+                children: [
+                  Text("""
+أَعُوْذُ بِاللّٰهِ مِنَ الشَّيْطٰانِ الرَّجِيْمِ
+Тошбўрон қилинган ва Даргоҳдан қувилган шайтоннинг ёмонлигидан Аллоҳга сиғинаман.
+بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+Раҳмон ва Раҳийм (беҳад меҳрибон ва бениҳоят раҳмли) Аллоҳ номи билан.
+اِنَّا لِلّٰهِ وَاِنَّٓا اِلَيْهِ رَاجِعُونَ 
+Шубҳасиз, биз (ҳамма нарсамиз билан) Аллоҳникимиз ва (охири) яна Унга қайтурмиз.
+                  """,
+                    textAlign: TextAlign.center,
+                    style:  AppTextStyles.labelLarge(context,
+                  fontSize: 22.h,
+                  fontWeight: FontWeight.w500,),),
+                 ...List.generate(dailyModel.length, (index)  {
+                   return  VerseItem(dailyModel: dailyModel[index]);
+                 })
+                ],
               )
             ),
           ],
@@ -90,3 +96,4 @@ class ZikrPage extends StatelessWidget {
     );
   }
 }
+
