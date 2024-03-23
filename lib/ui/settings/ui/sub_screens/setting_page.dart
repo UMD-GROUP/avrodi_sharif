@@ -14,7 +14,7 @@ class SettingPage extends StatelessWidget {
           return SafeArea(
             child: Column(
               children: [
-                GlobalAppBar(AppBarType.withSettingsAndPop,
+                GlobalAppBar(AppBarType.withoutSettingsAndPop,
                     title: setting.title),
                 SizedBox(
                   width: width(context),
