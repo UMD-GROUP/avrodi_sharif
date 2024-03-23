@@ -69,10 +69,10 @@ class ZikrPage extends StatelessWidget {
             SizedBox(height: 20.h),
 
             Expanded(
-              child: ListView(
-
-                children: [
-                  Text("""
+              child: BlocBuilder<SettingsBloc,SettingsState>(builder: (context,state){
+                return ListView(
+                  children: [
+                    Text("""
 أَعُوْذُ بِاللّٰهِ مِنَ الشَّيْطٰانِ الرَّجِيْمِ
 Тошбўрон қилинган ва Даргоҳдан қувилган шайтоннинг ёмонлигидан Аллоҳга сиғинаман.
 بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
@@ -80,15 +80,17 @@ class ZikrPage extends StatelessWidget {
 اِنَّا لِلّٰهِ وَاِنَّٓا اِلَيْهِ رَاجِعُونَ 
 Шубҳасиз, биз (ҳамма нарсамиз билан) Аллоҳникимиз ва (охири) яна Унга қайтурмиз.
                   """,
-                    textAlign: TextAlign.center,
-                    style:  AppTextStyles.labelLarge(context,
-                  fontSize: 22.h,
-                  fontWeight: FontWeight.w500,),),
-                 ...List.generate(dailyModel.length, (index)  {
-                   return  VerseItem(dailyModel: dailyModel[index]);
-                 })
-                ],
-              )
+                      textAlign: TextAlign.center,
+                      style:  AppTextStyles.labelLarge(context,
+                        fontSize: state.fontSize.toDouble(),
+                        fontWeight: FontWeight.w500,),),
+                ...List.generate(dailyModel.length, (index)  {
+                return  VerseItem(dailyModel: dailyModel[index]);
+                }),
+                  ],
+                );
+
+              })
             ),
           ],
         ),
