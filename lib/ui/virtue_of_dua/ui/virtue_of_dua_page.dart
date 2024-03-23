@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/data/all_data/all_data.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class VirtueOfDuaPage extends StatelessWidget {
@@ -6,7 +7,7 @@ class VirtueOfDuaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.canvasColor,
       body: SafeArea(
         child: SizedBox(
           height: height(context),
@@ -23,11 +24,14 @@ class VirtueOfDuaPage extends StatelessWidget {
                   children: [
                     Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.h),
-                        child: SingleChildScrollView(
-                          child: Text(
-                             "",
-                              style: AppTextStyles.labelLarge(context)),
-                        ),
+                        child: BlocBuilder<SettingsBloc,SettingsState>(builder: (context,state){
+                          return  SingleChildScrollView(
+                            child: Text(
+                                textAlign: TextAlign.left,
+                                aboutDua,
+                                style: AppTextStyles.labelLarge(context,fontSize: state.fontSize.toDouble())),
+                          );
+                        })
                     ),
                   ],
                 ),

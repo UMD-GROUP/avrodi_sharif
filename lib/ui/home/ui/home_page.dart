@@ -1,7 +1,29 @@
+import 'dart:math';
+
+import 'package:avrodi_sharif/data/all_data/all_data.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  int poemIndex = 0;
+  @override
+  void initState() {
+    _random();
+    super.initState();
+  }
+
+
+  void _random(){
+    poemIndex = Random().nextInt(18);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +41,8 @@ class HomePage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20.h),
                   child: Column(
                     children: [
-                      QuoteItem(quote: """Кўзимдан ёш кетиб, қурғоқ бўлурман
-Шарбат ичган сари қақроқ бўлурман.
-Йиллар йўлларингда йиғлаган сайин
-Вужуд лойим қуриб, тупроқ бўлурман."""),
+                      // Text("poems[poemIndex].poem"),
+                      QuoteItem(quote: poems[poemIndex].poem),
                       const Spacer(),
                       OnTap(
                         onTap: () {
@@ -54,7 +74,7 @@ class HomePage extends StatelessWidget {
                       const Spacer(),
                       const Spacer(),
                       SizedBox(
-                          height: height(context) * 0.35,
+                          height: height(context) * 0.38,
                           width: width(context),
                           child: GridView.builder(
                               physics: const NeverScrollableScrollPhysics(),
@@ -64,11 +84,12 @@ class HomePage extends StatelessWidget {
                                       crossAxisCount: 2,
                                       mainAxisSpacing: 10.0,
                                       crossAxisSpacing: 10.0,
-                                      childAspectRatio: 3 / 2.3,
+                                      childAspectRatio: 3 / 2.4,
                                   ),
                               itemBuilder: (context, index) {
                                 return MenuButton(data: menuItems[index]);
                               })),
+
                       const Spacer(),
                       SizedBox(
                         child: Row(

@@ -1,6 +1,5 @@
 import 'package:avrodi_sharif/ui/weekly_zikr/data/models/zikr_model.dart';
-import 'package:avrodi_sharif/ui/zikr/data/daily_arabic_russian_data.dart';
-import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
+import 'package:avrodi_sharif/data/all_data/all_data.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class WeeklyZikrPage extends StatelessWidget {
@@ -9,7 +8,7 @@ class WeeklyZikrPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.canvasColor,
       body: SafeArea(
         child: Column(
           children: [

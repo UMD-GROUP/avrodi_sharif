@@ -4,13 +4,13 @@ class AppTheme {
   static ThemeData light = ThemeData(
     fontFamily: "Inter",
     focusColor: Colors.white,
-    backgroundColor: const Color.fromRGBO(247, 247, 247, 1),
+    canvasColor: const Color.fromRGBO(247, 247, 247, 1),
     hintColor: Colors.black,
   );
   static ThemeData dark = ThemeData(
     fontFamily: "Inter",
     focusColor: Colors.black,
     hintColor: Colors.white,
-    backgroundColor: Colors.black,
+    canvasColor: Colors.black,
   );
 }

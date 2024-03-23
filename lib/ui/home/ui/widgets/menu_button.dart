@@ -21,7 +21,7 @@ class MenuButton extends StatelessWidget {
                 blurRadius: 15,
               )
             ],
-            color: AdaptiveTheme.of(context).theme.backgroundColor,
+            color: AdaptiveTheme.of(context).theme.canvasColor,
             borderRadius: BorderRadius.circular(10.h)),
         child: SizedBox(
           height: height(context) * 0.15,
@@ -44,6 +44,7 @@ class MenuButton extends StatelessWidget {
                   );
                 },
               ),
+
               const Spacer(),
               const Spacer()
             ],
