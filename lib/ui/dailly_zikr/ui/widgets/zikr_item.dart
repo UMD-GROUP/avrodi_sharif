@@ -1,3 +1,4 @@
+import 'package:avrodi_sharif/ui/zikr/data/models/daily_zikr_arab_krill_model.dart';
 import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
@@ -6,13 +7,13 @@ class ZikrItem extends StatelessWidget {
   final String icon;
   final double? zikrWidth;
   final String? subtitle;
-
+  final List<DailyArabicRussianModel>? dailyModel;
   const ZikrItem({
     this.zikrWidth,
     required this.title,
     required this.icon,
     super.key,
-    this.subtitle,
+    this.subtitle, this.dailyModel,
   });
 
   @override
@@ -22,7 +23,10 @@ class ZikrItem extends StatelessWidget {
         Navigator.pushNamed(
           context,
           RouteName.zikr,
-          arguments: ZikrInputModel(title: title, subtitle: subtitle!),
+          arguments: {
+            "zikr_input":ZikrInputModel(title: title, subtitle: subtitle!),
+            "daily_zikr": dailyModel
+          },
         );
       },
       child: SizedBox(

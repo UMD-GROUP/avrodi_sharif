@@ -1,4 +1,5 @@
 import 'package:avrodi_sharif/ui/weekly_zikr/data/models/zikr_model.dart';
+import 'package:avrodi_sharif/ui/zikr/data/daily_arabic_russian_data.dart';
 import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
@@ -32,6 +33,7 @@ class WeeklyZikrPage extends StatelessWidget {
                     itemBuilder: (context, index) {
 
                       return ZikrItem(
+                        dailyModel: dailyData[index],
                         title: zikrlar[index].title,
                         icon: zikrlar[index].icon,
                         subtitle: zikrlar[index].subtitle,
@@ -40,6 +42,7 @@ class WeeklyZikrPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20.h),
                   ZikrItem(
+                    dailyModel: dailyData[6],
                     title: zikrlar[6].title,
                     subtitle: zikrlar[6].subtitle,
                     icon: zikrlar[6].icon,

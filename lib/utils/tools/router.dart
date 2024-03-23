@@ -1,4 +1,5 @@
 import 'package:avrodi_sharif/ui/settings/ui/sub_screens/setting_page.dart';
+import 'package:avrodi_sharif/ui/zikr/data/models/daily_zikr_arab_krill_model.dart';
 import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
 import 'package:avrodi_sharif/ui/zikr/ui/zikr_page.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
@@ -37,9 +38,16 @@ class AppRoutes {
       case RouteName.creationRoom:
         return MaterialPageRoute(builder: (_) => const CreationRoomPage());
       case RouteName.zikr:
-        return MaterialPageRoute(
-          builder: (_) => ZikrPage(args as ZikrInputModel)
-        );
+        {
+          Map<String, dynamic> map = args as Map<String, dynamic>;
+
+          return MaterialPageRoute(
+            builder: (_) => ZikrPage(
+              dailyModel: map["daily_zikr"] as List<DailyArabicRussianModel>,
+              zikrInputModel: map["zikr_input"] as ZikrInputModel,
+            ),
+          );
+        }
       case RouteName.setting:
         return MaterialPageRoute(
           builder: (_) => SettingPage(
