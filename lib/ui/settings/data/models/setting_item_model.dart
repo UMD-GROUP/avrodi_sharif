@@ -21,8 +21,8 @@ List settingItems = [
       icon: AppIcons.darkMode),
   SettingItemModel(
       type: SettingItemType.route, title: "Шрифт", icon: AppIcons.font),
-  SettingItemModel(
-      type: SettingItemType.route, title: "Хатчўп", icon: AppIcons.bookmark),
+  // SettingItemModel(
+  //     type: SettingItemType.route, title: "Хатчўп", icon: AppIcons.bookmark),
   SettingItemModel(
       type: SettingItemType.url,
       title: "Савол йўллаш",

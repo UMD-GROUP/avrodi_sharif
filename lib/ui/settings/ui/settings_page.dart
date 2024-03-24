@@ -6,7 +6,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
         child: SizedBox(
           height: height(context),
@@ -23,7 +23,7 @@ class SettingsPage extends StatelessWidget {
                   children: [
                     ListView.builder(
                       shrinkWrap: true,
-                      itemCount: 5,
+                      itemCount: settingItems.length,
                       itemBuilder: (context, index) => SettingItem(
                         settings: settingItems[index],
                       ),

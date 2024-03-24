@@ -8,7 +8,7 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
           return SafeArea(
