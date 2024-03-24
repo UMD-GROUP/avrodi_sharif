@@ -13,13 +13,29 @@ class CreationRoomPage extends StatelessWidget {
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
             Expanded(
-              child: ListView.builder(
+              child: BlocBuilder<SettingsBloc,SettingsState>(builder: (BuildContext context, state) {
+                return ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: poems.length,
+                  itemCount:  poemsForCreationRoom.length,
                   shrinkWrap: true,
-                  itemBuilder: (context, index) => Text(poems[index].poem,
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.labelLarge(context))),
+                  itemBuilder: (context, index) => Padding(
+                    padding:  EdgeInsets.all(15.sp),
+                    child: Column(
+                      children: [
+                        Text(poemsForCreationRoom[index].title!,
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.labelLarge(context,fontWeight: FontWeight.bold,fontSize: state.fontSize.toDouble()),
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(poemsForCreationRoom[index].poem,
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.labelLarge(context,fontSize: state.fontSize.toDouble()),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },)
             )
           ],
         ),

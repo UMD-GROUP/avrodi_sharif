@@ -16,22 +16,32 @@ class DailyZikrPage extends StatelessWidget {
               padding: EdgeInsets.all(20.h),
               child: Column(
                 children: [
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
+                        onTap: (){
+                          Navigator.pushNamed(context, RouteName.quranVerser);
+                        },
                           title: "Қуръон оятлари", icon: AppIcons.starBook),
                       ZikrItem(
-                          title: "Хадисдаги дуолар", icon: AppIcons.starHands),
+                        onTap: (){
+                          Navigator.pushNamed(context, RouteName.prayersInHadith);
+                        },
+                          title: "Хадисдаги дуолар", icon: AppIcons.starHands,),
                     ],
                   ),
                   SizedBox(height: 20.h),
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
+                          onTap: (){},
                           title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
                       ZikrItem(
+                        onTap: (){
+                          Navigator.pushNamed(context, RouteName.namesOfAllah);
+                        },
                         title: "Аллоҳнинг 99 исми",
                         icon: AppIcons.starWord,
                       ),
