@@ -6,7 +6,7 @@ class DailyZikrPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -16,7 +16,7 @@ class DailyZikrPage extends StatelessWidget {
               padding: EdgeInsets.all(20.h),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
@@ -26,10 +26,16 @@ class DailyZikrPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20.h),
-                  ZikrItem(
-                      title: "Аллоҳнинг 99 исми",
-                      icon: AppIcons.starWord,
-                      zikrWidth: width(context),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ZikrItem(
+                        title: "Аллоҳнинг 99 исми",
+                        icon: AppIcons.starWord,
+                      ),
+                      ZikrItem(
+                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
+                    ],
                   )
                 ],
               ),

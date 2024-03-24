@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
             // home: Material(child: EnterInfoPage()),
             title: 'Bookmeri',
           ),
-          light: AppTheme.light,
+          light: AppTheme.lightTheme(),
           initial: AdaptiveThemeMode.light,
-          dark: AppTheme.dark,
+          dark: AppTheme.darkTheme(),
         );
       },
     );
