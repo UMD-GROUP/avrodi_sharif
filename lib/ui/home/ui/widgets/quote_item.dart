@@ -9,6 +9,7 @@ class QuoteItem extends StatelessWidget {
     return Container(
         height: height(context) * 0.25,
         width: width(context),
+        padding: const EdgeInsets.all(20),
         alignment: Alignment.center,
         decoration: const BoxDecoration(
             image: DecorationImage(
