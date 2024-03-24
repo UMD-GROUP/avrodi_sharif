@@ -1,6 +1,6 @@
 class ZikrInputModel {
   final String title;
-  final String body;
+  final String subtitle;
 
-  ZikrInputModel({required this.title, required this.body});
+  ZikrInputModel({required this.title, required this.subtitle});
 }

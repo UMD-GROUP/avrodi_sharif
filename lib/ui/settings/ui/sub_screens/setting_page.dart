@@ -1,19 +1,20 @@
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class SettingPage extends StatelessWidget {
-  SettingItemModel setting;
-  SettingPage({required this.setting, super.key});
+  final SettingItemModel setting;
+
+  const SettingPage({required this.setting, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
           return SafeArea(
             child: Column(
               children: [
-                GlobalAppBar(AppBarType.withSettingsAndPop,
+                GlobalAppBar(AppBarType.withoutSettingsAndPop,
                     title: setting.title),
                 SizedBox(
                   width: width(context),
@@ -25,9 +26,13 @@ class SettingPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: 10.h),
-                              Text("Ёзув катталиги:",
-                                  style: AppTextStyles.labelLarge(context,
-                                      fontSize: state.fontSize.toDouble())),
+                              Text(
+                                "Ёзув катталиги:",
+                                style: AppTextStyles.labelLarge(
+                                  context,
+                                  fontSize: state.fontSize.toDouble(),
+                                ),
+                              ),
                               SizedBox(height: 10.h),
                               Slider(
                                 max: 20,
@@ -37,26 +42,31 @@ class SettingPage extends StatelessWidget {
                                 thumbColor: Colors.white,
                                 value: state.fontSize.toDouble(),
                                 onChanged: (value) {
-                                  context
-                                      .read<SettingsBloc>()
-                                      .add(SaveFontSizeEvent(value.toInt()));
+                                  context.read<SettingsBloc>().add(
+                                        SaveFontSizeEvent(
+                                          value.toInt(),
+                                        ),
+                                      );
                                 },
                               ),
                               SizedBox(height: 10.h),
                               DecoratedBox(
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.h),
-                                    color: AdaptiveTheme.of(context)
-                                        .theme
-                                        .focusColor),
+                                  borderRadius: BorderRadius.circular(10.h),
+                                  color: AdaptiveTheme.of(context)
+                                      .theme
+                                      .focusColor,
+                                ),
                                 child: SizedBox(
                                   child: Padding(
                                     padding: EdgeInsets.all(12.h),
                                     child: Text(
-                                        """Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz""",
-                                        style: AppTextStyles.labelLarge(context,
-                                            fontSize:
-                                                state.fontSize.toDouble())),
+                                      """Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz""",
+                                      style: AppTextStyles.labelLarge(
+                                        context,
+                                        fontSize: state.fontSize.toDouble(),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               )
@@ -65,7 +75,9 @@ class SettingPage extends StatelessWidget {
                         : Column(
                             children: [
                               ...List.generate(
-                                  5, (index) => const BookMarkItem())
+                                5,
+                                (index) => const BookMarkItem(),
+                              )
                             ],
                           ),
                   ),

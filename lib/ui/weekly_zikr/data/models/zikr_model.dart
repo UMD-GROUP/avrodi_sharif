@@ -12,7 +12,8 @@ List<ZikrModel> zikrlar = [
   ZikrModel(
       title: "Душанба кунги вирд",
       icon: AppIcons.monday,
-      subtitle: "Таваккул ва ҳифзу-ҳимоя оятлари"),
+      subtitle: "Таваккул ва ҳифзу-ҳимоя оятлари",
+  ),
   ZikrModel(
       title: "Сешанба кунги вирд",
       icon: AppIcons.tuesday,

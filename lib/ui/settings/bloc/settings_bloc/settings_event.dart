@@ -6,6 +6,6 @@ abstract class SettingsEvent {}
 class GetFontSizeEvent extends SettingsEvent {}
 
 class SaveFontSizeEvent extends SettingsEvent {
-  int fontSize;
+  final int fontSize;
   SaveFontSizeEvent(this.fontSize);
 }

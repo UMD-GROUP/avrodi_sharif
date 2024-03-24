@@ -13,7 +13,7 @@ class BookMarkItem extends StatelessWidget {
             BoxShadow(
                 color: Colors.grey.shade300, spreadRadius: 0.3, blurRadius: 3)
           ],
-          color: AdaptiveTheme.of(context).theme.backgroundColor,
+          color: AdaptiveTheme.of(context).theme.canvasColor,
           borderRadius: BorderRadius.circular(10.h)),
       padding: EdgeInsets.symmetric(horizontal: 12.h),
       margin: EdgeInsets.only(top: 16.h),
