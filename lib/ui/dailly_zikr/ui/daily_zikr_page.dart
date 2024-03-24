@@ -30,11 +30,11 @@ class DailyZikrPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
+                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
+                      ZikrItem(
                         title: "Аллоҳнинг 99 исми",
                         icon: AppIcons.starWord,
                       ),
-                      ZikrItem(
-                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
                     ],
                   )
                 ],
