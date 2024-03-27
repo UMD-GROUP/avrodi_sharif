@@ -36,7 +36,9 @@ class DailyZikrPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, RouteName.liveMentions);
+                          },
                           title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
                       ZikrItem(
                         onTap: (){

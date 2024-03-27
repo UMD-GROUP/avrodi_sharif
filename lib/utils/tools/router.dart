@@ -1,4 +1,5 @@
 
+import 'package:avrodi_sharif/ui/live_mentions/live_mentions.dart';
 import 'package:avrodi_sharif/ui/quran_ayat/quran_ayat_page.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
@@ -16,6 +17,7 @@ abstract class RouteName {
   static const namesOfAllah = '/namesOfAllah';
   static const prayersInHadith = '/prayersInHadith';
   static const quranVerser = "/quranVerses";
+  static const liveMentions = '/lifeMentions';
 }
 
 class AppRoutes {
@@ -44,6 +46,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const PrayersInHadithPage());
         case RouteName.quranVerser:
         return MaterialPageRoute(builder: (_) => const QuranVersePage());
+      case RouteName.liveMentions:
+        // return MaterialPageRoute(builder: (_) => const LifeMentions());
       case RouteName.zikr:
         {
           Map<String, dynamic> map = args as Map<String, dynamic>;
