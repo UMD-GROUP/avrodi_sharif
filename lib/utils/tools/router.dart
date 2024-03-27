@@ -47,7 +47,7 @@ class AppRoutes {
         case RouteName.quranVerser:
         return MaterialPageRoute(builder: (_) => const QuranVersePage());
       case RouteName.liveMentions:
-        // return MaterialPageRoute(builder: (_) => const LifeMentions());
+        return MaterialPageRoute(builder: (_) => const LifeMentions());
       case RouteName.zikr:
         {
           Map<String, dynamic> map = args as Map<String, dynamic>;

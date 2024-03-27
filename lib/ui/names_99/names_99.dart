@@ -12,7 +12,6 @@ class NamesOfAllahPage extends StatelessWidget {
       backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
         child: Column(
-
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Аллоҳнинг 99 исми"),
             SizedBox(

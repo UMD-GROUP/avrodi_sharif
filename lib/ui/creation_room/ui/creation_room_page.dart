@@ -43,7 +43,7 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
             SizedBox(
-              height: 800.h,
+              height: height(context) * 0.89,
               width: double.infinity,
               child: ListView(
                 children: [
