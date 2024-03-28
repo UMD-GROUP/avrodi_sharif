@@ -1,8 +1,36 @@
-import 'package:avrodi_sharif/data/all_data/all_data.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
 
-class CreationRoomPage extends StatelessWidget {
-  const CreationRoomPage({super.key});
+class CreationRoomPage extends StatefulWidget {
+  const CreationRoomPage({Key? key}) : super(key: key);
+
+  @override
+  State<CreationRoomPage> createState() => _CreationRoomPageState();
+}
+
+class _CreationRoomPageState extends State<CreationRoomPage> {
+  String docs = '';
+  bool isLoad = false;
+  Future<void> fetchDocumentContent() async {
+    isLoad = true;
+    final response = await http.get(Uri.parse(
+        "https://docs.google.com/document/d/1tDPyEhvlG7q12MakLzhicmdlpscIS-iWEFAtITrqxec/export?format=txt"));
+    if (response.statusCode == 200) {
+      setState(() {
+        docs = response.body;
+      });
+      isLoad = false;
+    } else {
+      throw Exception('Failed to load document content');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchDocumentContent();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,31 +40,30 @@ class CreationRoomPage extends StatelessWidget {
         child: Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
-            Expanded(
-              child: BlocBuilder<SettingsBloc,SettingsState>(builder: (BuildContext context, state) {
-                return ListView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  itemCount:  poemsForCreationRoom.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) => Padding(
-                    padding:  EdgeInsets.all(15.sp),
-                    child: Column(
-                      children: [
-                        Text(poemsForCreationRoom[index].title!,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.labelLarge(context,fontWeight: FontWeight.bold,fontSize: state.fontSize.toDouble()),
-                        ),
-                        SizedBox(height: 10.h),
-                        Text(poemsForCreationRoom[index].poem,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.labelLarge(context,fontSize: state.fontSize.toDouble()),
-                        ),
-                      ],
+            isLoad
+                ? Expanded(
+                    child: Center(
+                      child: CupertinoActivityIndicator(
+                        color: AdaptiveTheme.of(context).theme.hintColor,
+                      ),
                     ),
+                  )
+                : BlocBuilder<SettingsBloc, SettingsState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: SingleChildScrollView(
+                          child: Text(
+                            docs,
+                            style: TextStyle(
+                                color:
+                                    AdaptiveTheme.of(context).theme.hintColor,
+                                fontSize: state.fontSize.toDouble()),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },)
-            )
           ],
         ),
       ),

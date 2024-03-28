@@ -23,11 +23,20 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SizedBox(
         height: height(context),
         width: width(context),
-        child: const Center(
-          child: Text("Splash page"),
+        child: Center(
+          child: InteractiveViewer(
+            boundaryMargin: const EdgeInsets.all(20),
+            minScale: 0.1,
+            maxScale: 3.0,
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 200,
+            ),
+          ),
         ),
       ),
     );

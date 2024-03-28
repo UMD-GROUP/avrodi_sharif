@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:avrodi_sharif/data/all_data/all_data.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   int poemIndex = 0;
   @override
   void initState() {
@@ -19,11 +17,10 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
-  void _random(){
+  void _random() {
     poemIndex = Random().nextInt(18);
+    setState(() {});
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +78,11 @@ class _HomePageState extends State<HomePage> {
                               itemCount: 4,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      mainAxisSpacing: 10.0,
-                                      crossAxisSpacing: 10.0,
-                                      childAspectRatio: 3 / 2.4,
-                                  ),
+                                crossAxisCount: 2,
+                                mainAxisSpacing: 10.0,
+                                crossAxisSpacing: 10.0,
+                                childAspectRatio: 3 / 2.4,
+                              ),
                               itemBuilder: (context, index) {
                                 return MenuButton(data: menuItems[index]);
                               })),
