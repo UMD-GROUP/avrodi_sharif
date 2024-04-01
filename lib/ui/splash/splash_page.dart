@@ -28,14 +28,26 @@ class _SplashPageState extends State<SplashPage> {
         height: height(context),
         width: width(context),
         child: Center(
-          child: InteractiveViewer(
-            boundaryMargin: const EdgeInsets.all(20),
-            minScale: 0.1,
-            maxScale: 3.0,
-            child: Image.asset(
-              'assets/images/logo.png',
-              width: 200,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InteractiveViewer(
+                boundaryMargin: const EdgeInsets.all(20),
+                minScale: 0.1,
+                maxScale: 3.0,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 200,
+                ),
+              ),
+              const Text(
+                'Авроди Шариф',
+                style: TextStyle(
+                    color: Color(0xffd28803),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
+              )
+            ],
           ),
         ),
       ),

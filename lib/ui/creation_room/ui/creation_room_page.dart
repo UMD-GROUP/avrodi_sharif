@@ -52,13 +52,17 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
                     builder: (context, state) {
                       return Expanded(
                         child: SingleChildScrollView(
-                          child: Text(
-                            docs,
-                            style: TextStyle(
-                                color:
-                                    AdaptiveTheme.of(context).theme.hintColor,
-                                fontSize: state.fontSize.toDouble()),
-                            textAlign: TextAlign.center,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(
+                              docs,
+                              style: TextStyle(
+                                  color:
+                                      AdaptiveTheme.of(context).theme.hintColor,
+                                  fontSize: state.fontSize.toDouble()),
+                              textAlign: TextAlign.start,
+                            ),
                           ),
                         ),
                       );

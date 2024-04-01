@@ -16,30 +16,38 @@ class DailyZikrPage extends StatelessWidget {
               padding: EdgeInsets.all(20.h),
               child: Column(
                 children: [
-                   Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
-                        onTap: (){
-                          Navigator.pushNamed(context, RouteName.quranVerser);
-                        },
-                          title: "Қуръон оятлари", icon: AppIcons.starBook),
+                          onTap: () {
+                            Navigator.pushNamed(context, RouteName.quranVerser);
+                          },
+                          title: "Қуръон оятлари",
+                          icon: AppIcons.starBook),
                       ZikrItem(
-                        onTap: (){
-                          Navigator.pushNamed(context, RouteName.prayersInHadith);
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, RouteName.prayersInHadith);
                         },
-                          title: "Хадисдаги дуолар", icon: AppIcons.starHands,),
+                        title: "Хадисдаги дуолар",
+                        icon: AppIcons.starHands,
+                      ),
                     ],
                   ),
                   SizedBox(height: 20.h),
-                   Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
-                          onTap: (){},
-                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
+                          onTap: () {
+                            launchMyUrl(
+                                'https://telegra.ph/NA%D2%9ASHBANDIYA-TARI%D2%9AATI-VAZIFASINI-BAZHARISH-ODOBI-05-12');
+                          },
+                          title: "Ҳаётбахш зикрлар",
+                          icon: AppIcons.starHands),
                       ZikrItem(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, RouteName.namesOfAllah);
                         },
                         title: "Аллоҳнинг 99 исми",
