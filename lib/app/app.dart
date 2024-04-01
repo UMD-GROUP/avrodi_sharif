@@ -30,16 +30,17 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return AdaptiveTheme(
-          builder: (light, dark) => const GetMaterialApp(
+          builder: (light, dark) => const MaterialApp(
             initialRoute: RouteName.splash,
             onGenerateRoute: AppRoutes.generateRoute,
             debugShowCheckedModeBanner: false,
+            // home: SearchInTextWidget(),
             // home: Material(child: EnterInfoPage()),
-            title: 'Bookmeri',
+            title: 'Авроди Шариф',
           ),
-          light: AppTheme.light,
+          light: AppTheme.lightTheme(),
           initial: AdaptiveThemeMode.light,
-          dark: AppTheme.dark,
+          dark: AppTheme.darkTheme(),
         );
       },
     );

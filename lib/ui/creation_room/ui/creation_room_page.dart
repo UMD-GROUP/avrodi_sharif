@@ -1,31 +1,73 @@
-import 'package:avrodi_sharif/ui/creation_room/bloc/creation_room/creation_room_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
 
-class CreationRoomPage extends StatelessWidget {
-  const CreationRoomPage({super.key});
+class CreationRoomPage extends StatefulWidget {
+  const CreationRoomPage({Key? key}) : super(key: key);
+
+  @override
+  State<CreationRoomPage> createState() => _CreationRoomPageState();
+}
+
+class _CreationRoomPageState extends State<CreationRoomPage> {
+  String docs = '';
+  bool isLoad = false;
+  Future<void> fetchDocumentContent() async {
+    isLoad = true;
+    final response = await http.get(Uri.parse(
+        "https://docs.google.com/document/d/1tDPyEhvlG7q12MakLzhicmdlpscIS-iWEFAtITrqxec/export?format=txt"));
+    if (response.statusCode == 200) {
+      setState(() {
+        docs = response.body;
+      });
+      isLoad = false;
+    } else {
+      throw Exception('Failed to load document content');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchDocumentContent();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AdaptiveTheme.of(context).theme.backgroundColor,
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
         child: Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
-            BlocBuilder<CreationRoomBloc, CreationRoomState>(
-              builder: (context, state) {
-                if (state.status == ResponseStatus.inSuccess) {
-                  List data = state.data.first;
-                  return ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: data.length,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => Text(data[index],
-                          style: AppTextStyles.labelLarge(context)));
-                }
-                return const CircularProgressIndicator();
-              },
-            )
+            isLoad
+                ? Expanded(
+                    child: Center(
+                      child: CupertinoActivityIndicator(
+                        color: AdaptiveTheme.of(context).theme.hintColor,
+                      ),
+                    ),
+                  )
+                : BlocBuilder<SettingsBloc, SettingsState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(
+                              docs,
+                              style: TextStyle(
+                                  color:
+                                      AdaptiveTheme.of(context).theme.hintColor,
+                                  fontSize: state.fontSize.toDouble()),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
           ],
         ),
       ),

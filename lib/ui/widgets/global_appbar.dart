@@ -24,7 +24,8 @@ class GlobalAppBar extends StatelessWidget {
               },
             ),
           ),
-          Text(title,
+          Text(
+              title,
               style: AppTextStyles.labelLarge(context,
                   fontWeight: FontWeight.w500, fontSize: 20.h)),
           Visibility(

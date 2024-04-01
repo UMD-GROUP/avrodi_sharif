@@ -4,13 +4,13 @@ part 'settings_event.dart';
 part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
-  SettingsBloc() : super(SettingsState(16)) {
+  SettingsBloc() : super(const SettingsState(16)) {
     on<GetFontSizeEvent>(getFontSize);
     on<SaveFontSizeEvent>(saveFontSize);
   }
 
   getFontSize(event, emit) {
-    emit(state.copyWith((getIt<SettingsRepository>().getFontSize()) ?? 16));
+    emit(state.copyWith((getIt<SettingsRepository>().getFontSize()) ?? 14));
   }
 
   saveFontSize(event, emit) {

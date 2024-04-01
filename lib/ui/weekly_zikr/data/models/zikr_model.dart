@@ -10,13 +10,14 @@ class ZikrModel {
 
 List<ZikrModel> zikrlar = [
   ZikrModel(
-      title: "Душанба кунги вирд",
-      icon: AppIcons.monday,
-      subtitle: "Таваккул ва ҳифзу-ҳимоя оятлари"),
+    title: "Душанба кунги вирд",
+    icon: AppIcons.monday,
+    subtitle: "Таваккул ва ҳифзу-ҳимоя оятлари",
+  ),
   ZikrModel(
       title: "Сешанба кунги вирд",
       icon: AppIcons.tuesday,
-      subtitle: "Саломат ва шифо оятлари(асал)"),
+      subtitle: "Саломат ва шифо оятлари"),
   ZikrModel(
       title: "Чоршанба кунги вирд",
       icon: AppIcons.wednesday,
