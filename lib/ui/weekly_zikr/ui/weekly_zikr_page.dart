@@ -32,18 +32,37 @@ class WeeklyZikrPage extends StatelessWidget {
                     itemBuilder: (context, index) {
 
                       return ZikrItem(
-                        dailyModel: dailyData[index],
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            RouteName.zikr,
+                            arguments: {
+                              "zikr_input":ZikrInputModel(title: zikrlar[index].title, subtitle: zikrlar[index].subtitle,),
+                              "daily_zikr": dailyData[index],
+                            },
+                          );
+                        },
+
                         title: zikrlar[index].title,
                         icon: zikrlar[index].icon,
-                        subtitle: zikrlar[index].subtitle,
+
                       );
                     },
                   ),
                   SizedBox(height: 20.h),
                   ZikrItem(
-                    dailyModel: dailyData[6],
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RouteName.zikr,
+                        arguments: {
+                          "zikr_input":ZikrInputModel(title: zikrlar[6].title, subtitle: zikrlar[6].subtitle,),
+                          "daily_zikr": dailyData[6],
+                        },
+                      );
+                    },
+
                     title: zikrlar[6].title,
-                    subtitle: zikrlar[6].subtitle,
                     icon: zikrlar[6].icon,
                     zikrWidth: width(context),
 

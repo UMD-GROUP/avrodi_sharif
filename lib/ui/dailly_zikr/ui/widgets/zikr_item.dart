@@ -1,34 +1,24 @@
-import 'package:avrodi_sharif/ui/zikr/data/models/daily_zikr_arab_krill_model.dart';
-import 'package:avrodi_sharif/ui/zikr/data/models/zikr_input_model.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class ZikrItem extends StatelessWidget {
   final String title;
   final String icon;
   final double? zikrWidth;
-  final String? subtitle;
-  final List<DailyArabicRussianModel>? dailyModel;
+  final Function() onTap;
+
+
   const ZikrItem({
     this.zikrWidth,
     required this.title,
     required this.icon,
     super.key,
-    this.subtitle, this.dailyModel,
+      required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return OnTap(
-      onTap: () {
-        Navigator.pushNamed(
-          context,
-          RouteName.zikr,
-          arguments: {
-            "zikr_input":ZikrInputModel(title: title, subtitle: subtitle!),
-            "daily_zikr": dailyModel
-          },
-        );
-      },
+      onTap: onTap,
       child: SizedBox(
         height: height(context) * 0.13,
         width: zikrWidth ?? height(context) * 0.19,

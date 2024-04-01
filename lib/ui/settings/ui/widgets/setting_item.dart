@@ -46,7 +46,9 @@ class _SettingItemState extends State<SettingItem> {
                         widget.settings.title,
                         style: AppTextStyles.labelLarge(
                           context,
-                          fontSize: state.fontSize.toDouble(),
+                          fontSize: state.fontSize < 20
+                              ? state.fontSize.toDouble()
+                              : 20,
                         ),
                       );
                     },
