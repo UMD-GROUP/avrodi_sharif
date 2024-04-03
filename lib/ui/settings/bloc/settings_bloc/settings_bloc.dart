@@ -10,7 +10,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   }
 
   getFontSize(event, emit) {
-    emit(state.copyWith((getIt<SettingsRepository>().getFontSize()) ?? 16));
+    emit(state.copyWith((getIt<SettingsRepository>().getFontSize()) ?? 14));
   }
 
   saveFontSize(event, emit) {

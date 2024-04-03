@@ -1,4 +1,5 @@
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 class CreationRoomPage extends StatefulWidget {
@@ -55,6 +56,34 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
                 ],
               ),
             ),
+            isLoad
+                ? Expanded(
+                    child: Center(
+                      child: CupertinoActivityIndicator(
+                        color: AdaptiveTheme.of(context).theme.hintColor,
+                      ),
+                    ),
+                  )
+                : BlocBuilder<SettingsBloc, SettingsState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(
+                              docs,
+                              style: TextStyle(
+                                  color:
+                                      AdaptiveTheme.of(context).theme.hintColor,
+                                  fontSize: state.fontSize.toDouble()),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
           ],
         ),
       ),

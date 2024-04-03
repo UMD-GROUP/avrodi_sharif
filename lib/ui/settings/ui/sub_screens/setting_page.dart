@@ -35,7 +35,7 @@ class SettingPage extends StatelessWidget {
                               ),
                               SizedBox(height: 10.h),
                               Slider(
-                                max: 20,
+                                max: 30,
                                 min: 12,
                                 activeColor: AppColors.c014E46,
                                 inactiveColor: Colors.grey,

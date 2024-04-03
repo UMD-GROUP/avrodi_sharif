@@ -26,11 +26,11 @@ List settingItems = [
   SettingItemModel(
       type: SettingItemType.url,
       title: "Савол йўллаш",
-      url: 'https://t.me/ahadjonovss',
+      url: 'https://t.me/Ismoilov_Abdukarim',
       icon: AppIcons.askQuestion),
   SettingItemModel(
       type: SettingItemType.url,
-      url: 'https://t.me/ahadjonovss',
+      url: 'https://t.me/umdgroupuz',
       title: "Бизнинг бошқа дастурлар",
       icon: AppIcons.others),
 ];
