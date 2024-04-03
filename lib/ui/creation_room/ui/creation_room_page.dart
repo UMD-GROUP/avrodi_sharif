@@ -15,7 +15,7 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
   Future<void> fetchDocumentContent() async {
     isLoad = true;
     final response = await http.get(Uri.parse(
-        "https://docs.google.com/document/d/1tDPyEhvlG7q12MakLzhicmdlpscIS-iWEFAtITrqxec/export?format=txt"));
+        "https://docs.google.com/document/d/1bRJUrxTbifhzaWPfj_oi1JNeL1eclt_DJ1Ni8GTf19E/export?format=txt"));
     if (response.statusCode == 200) {
       setState(() {
         docs = response.body;
@@ -37,9 +37,25 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
     return Scaffold(
       backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
-        child: Column(
+
+        child:
+        isLoad? const Center(child: CircularProgressIndicator(),):
+        Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
+            SizedBox(
+              height: height(context) * 0.89,
+              width: double.infinity,
+              child: ListView(
+                children: [
+                  Text(
+                    docs,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
             isLoad
                 ? Expanded(
                     child: Center(
