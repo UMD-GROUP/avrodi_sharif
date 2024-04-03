@@ -48,8 +48,13 @@ dependencies:
   firebase_core: ^2.15.1
   cloud_firestore: ^4.9.1
   http: ^1.2.1
+<<<<<<< HEAD
+
+
+=======
   rename: ^3.0.2
   icons_launcher: ^2.1.7
+>>>>>>> main
 
 dev_dependencies:
   flutter_test:
