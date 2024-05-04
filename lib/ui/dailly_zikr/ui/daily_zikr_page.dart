@@ -36,29 +36,27 @@ class DailyZikrPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ZikrItem(
-                          onTap: (){
-                            Navigator.pushNamed(context, RouteName.liveMentions);
-                          },
-                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
-                          onTap: () {
-                            launchMyUrl(
-                                'https://telegra.ph/NA%D2%9ASHBANDIYA-TARI%D2%9AATI-VAZIFASINI-BAZHARISH-ODOBI-05-12');
-                          },
-                          title: "Ҳаётбахш зикрлар",
-                          icon: AppIcons.starHands),
-                      ZikrItem(
-                        onTap: () {
-                          Navigator.pushNamed(context, RouteName.namesOfAllah);
-                        },
-                        title: "Аллоҳнинг 99 исми",
-                        icon: AppIcons.starWord,
-                      ),
-                    ],
-                  )
+                  ZikrItem(
+                    zikrWidth: MediaQuery.sizeOf(context).width,
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteName.namesOfAllah);
+                    },
+                    title: "Аллоҳнинг 99 исми",
+                    icon: AppIcons.starWord,
+                  ),
+                  SizedBox(height: 20.h),
+                  ZikrItem(
+                    zikrWidth: MediaQuery.sizeOf(context).width,
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteName.liveMentions);
+                    },
+                    title: "Нақшбандия зикр вазифалари",
+                    icon: AppIcons.starHands,
+                    // onTap: () {
+                    //   launchMyUrl(
+                    //       'https://telegra.ph/NA%D2%9ASHBANDIYA-TARI%D2%9AATI-VAZIFASINI-BAZHARISH-ODOBI-05-12');
+                    // }),
+                  ),
                 ],
               ),
             ),

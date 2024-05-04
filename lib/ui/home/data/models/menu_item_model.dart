@@ -11,19 +11,19 @@ class MenuItemModel {
 
 List menuItems = [
   MenuItemModel(
-      title: "Ушбу Авроди шариф",
-      icon: AppIcons.book,
-      routeName: RouteName.about),
-  MenuItemModel(
       title: "Дуо фазилати",
       icon: AppIcons.pray,
       routeName: RouteName.virtueOfDua),
   MenuItemModel(
-      title: "Ҳар кунги зикрлар",
-      icon: AppIcons.beads,
-      routeName: RouteName.dailyZikr),
+      title: "Ушбу Авроди шариф",
+      icon: AppIcons.book,
+      routeName: RouteName.about),
   MenuItemModel(
       title: "Ҳафта кунлари учун\nзикрлар",
       icon: AppIcons.calendar,
       routeName: RouteName.weeklyZikr),
+  MenuItemModel(
+      title: "Ҳар кунги зикрлар",
+      icon: AppIcons.beads,
+      routeName: RouteName.dailyZikr),
 ];

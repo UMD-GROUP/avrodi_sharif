@@ -13,7 +13,7 @@ class WeeklyZikrPage extends StatelessWidget {
           child: Column(
             children: [
               GlobalAppBar(AppBarType.withSettingsAndPop,
-                  title: "Ҳар кунги зикрлар"),
+                  title: "Ҳафта кунлари учун зикрлар"),
               Padding(
                 padding: EdgeInsets.all(20.h),
                 child: Column(
