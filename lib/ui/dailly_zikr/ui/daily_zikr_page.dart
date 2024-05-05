@@ -36,15 +36,15 @@ class DailyZikrPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20.h),
-                  ZikrItem(
-                    zikrWidth: MediaQuery.sizeOf(context).width,
-                    onTap: () {
-                      Navigator.pushNamed(context, RouteName.namesOfAllah);
-                    },
-                    title: "Аллоҳнинг 99 исми",
-                    icon: AppIcons.starWord,
-                  ),
-                  SizedBox(height: 20.h),
+                  // ZikrItem(
+                  //   zikrWidth: MediaQuery.sizeOf(context).width,
+                  //   onTap: () {
+                  //     Navigator.pushNamed(context, RouteName.namesOfAllah);
+                  //   },
+                  //   title: "Аллоҳнинг 99 исми",
+                  //   icon: AppIcons.starWord,
+                  // ),
+                  // SizedBox(height: 20.h),
                   ZikrItem(
                     zikrWidth: MediaQuery.sizeOf(context).width,
                     onTap: () {

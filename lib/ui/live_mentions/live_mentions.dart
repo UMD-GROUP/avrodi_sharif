@@ -6,12 +6,13 @@ class LifeMentions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               GlobalAppBar(AppBarType.withSettingsAndPop,
-                  title: "Ҳаётбахш зикрлар"),
+                  title: "Нақшбандия зикр ..."),
               SizedBox(
                   height: height(context) * 0.89,
                   width: double.infinity,
