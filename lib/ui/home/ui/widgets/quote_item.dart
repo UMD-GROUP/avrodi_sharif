@@ -7,7 +7,9 @@ class QuoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: height(context) * 0.25,
+        constraints: BoxConstraints(
+            maxHeight: height(context) * 0.33,
+            minHeight: height(context) * 0.25),
         width: width(context),
         padding: const EdgeInsets.all(20),
         alignment: Alignment.center,

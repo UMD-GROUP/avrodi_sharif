@@ -37,31 +37,13 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
     return Scaffold(
       backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
-
-        child:
-        isLoad? const Center(child: CircularProgressIndicator(),):
-        Column(
+        child: Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
-            SizedBox(
-              height: height(context) * 0.89,
-              width: double.infinity,
-              child: ListView(
-                children: [
-                  Text(
-                    docs,
-                    style: Theme.of(context).textTheme.titleMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
             isLoad
-                ? Expanded(
-                    child: Center(
-                      child: CupertinoActivityIndicator(
-                        color: AdaptiveTheme.of(context).theme.hintColor,
-                      ),
+                ? Center(
+                    child: CupertinoActivityIndicator(
+                      color: AdaptiveTheme.of(context).theme.hintColor,
                     ),
                   )
                 : BlocBuilder<SettingsBloc, SettingsState>(
