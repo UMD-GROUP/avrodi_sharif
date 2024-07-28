@@ -40,13 +40,9 @@ class DailyZikrPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ZikrItem(
-                          onTap: (){
-                            Navigator.pushNamed(context, RouteName.liveMentions);
-                          },
-                          title: "Ҳаётбахш зикрлар", icon: AppIcons.starHands),
                           onTap: () {
-                            launchMyUrl(
-                                'https://telegra.ph/NA%D2%9ASHBANDIYA-TARI%D2%9AATI-VAZIFASINI-BAZHARISH-ODOBI-05-12');
+                            Navigator.pushNamed(
+                                context, RouteName.liveMentions);
                           },
                           title: "Ҳаётбахш зикрлар",
                           icon: AppIcons.starHands),
