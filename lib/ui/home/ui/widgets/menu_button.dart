@@ -13,13 +13,13 @@ class MenuButton extends StatelessWidget {
       },
       child: DecoratedBox(
         decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade300,
-                spreadRadius: 1,
-                blurRadius: 15,
-              )
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.grey.shade300,
+            //     spreadRadius: 1,
+            //     blurRadius: 15,
+            //   )
+            // ],
             color: AdaptiveTheme.of(context).theme.canvasColor,
             borderRadius: BorderRadius.circular(10.h)),
         child: SizedBox(

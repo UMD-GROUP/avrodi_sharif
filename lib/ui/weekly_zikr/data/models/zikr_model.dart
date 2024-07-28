@@ -10,6 +10,18 @@ class ZikrModel {
 
 List<ZikrModel> zikrlar = [
   ZikrModel(
+      title: "Жума кунги вирдлар",
+      icon: AppIcons.friday,
+      subtitle: "Ҳамду сано оятлари"),
+  ZikrModel(
+      title: "Шанба кунги вирдлар",
+      icon: AppIcons.saturday,
+      subtitle: "Тавба-истиғфор оятлари"),
+  ZikrModel(
+      title: "Якшанба кунги вирд",
+      icon: AppIcons.sunday,
+      subtitle: "Тасбиҳ оятлари"),
+  ZikrModel(
     title: "Душанба кунги вирд",
     icon: AppIcons.monday,
     subtitle: "Таваккул ва ҳифзу-ҳимоя оятлари",
@@ -26,16 +38,4 @@ List<ZikrModel> zikrlar = [
       title: "Пайшанба кунги вирд",
       icon: AppIcons.thursday,
       subtitle: "Дуо оятлари  "),
-  ZikrModel(
-      title: "Жума кунги вирдлар",
-      icon: AppIcons.friday,
-      subtitle: "Ҳамду сано оятлари"),
-  ZikrModel(
-      title: "Шанба кунги вирдлар",
-      icon: AppIcons.saturday,
-      subtitle: "Тавба-истиғфор оятлари"),
-  ZikrModel(
-      title: "Якшанба кунги вирд",
-      icon: AppIcons.sunday,
-      subtitle: "Тасбиҳ оятлари"),
 ];
