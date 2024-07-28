@@ -6,13 +6,12 @@ class ZikrItem extends StatelessWidget {
   final double? zikrWidth;
   final Function() onTap;
 
-
   const ZikrItem({
     this.zikrWidth,
     required this.title,
     required this.icon,
     super.key,
-      required this.onTap,
+    required this.onTap,
   });
 
   @override
@@ -28,7 +27,7 @@ class ZikrItem extends StatelessWidget {
               BoxShadow(
                   color: Colors.grey.shade300, spreadRadius: 1, blurRadius: 15)
             ],
-            color: AdaptiveTheme.of(context).theme.backgroundColor,
+            color: AdaptiveTheme.of(context).theme.scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(10.h),
           ),
           child: Column(

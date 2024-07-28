@@ -45,7 +45,7 @@ class QuranVersePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     color: AdaptiveTheme.of(context)
                                         .theme
-                                        .backgroundColor,
+                                        .scaffoldBackgroundColor,
                                     borderRadius: BorderRadius.circular(10.r),
                                     border: Border.all(
                                         color: Colors.grey.shade200)),

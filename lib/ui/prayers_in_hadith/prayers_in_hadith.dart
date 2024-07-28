@@ -15,45 +15,45 @@ class PrayersInHadithPage extends StatelessWidget {
             width: double.infinity,
             child: ListView.builder(
                 itemCount: prayersInHadith.length,
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   return Container(
                     // height: ,
                     margin: EdgeInsets.all(10.sp),
                     padding: EdgeInsets.all(10.sp),
                     decoration: BoxDecoration(
-                        color: AdaptiveTheme.of(context).theme.backgroundColor,
+                        color: AdaptiveTheme.of(context)
+                            .theme
+                            .scaffoldBackgroundColor,
                         borderRadius: BorderRadius.circular(10.r),
-                        border: Border.all(color: Colors.grey.shade200)
-                    ),
+                        border: Border.all(color: Colors.grey.shade200)),
                     child: BlocBuilder<SettingsBloc, SettingsState>(
                         builder: (context, state) {
-                          return Column(
-                            children: [
-                              Text(
-                                prayersInHadith[index].arabic,
-                                textAlign: TextAlign.right,
-                                style: AppTextStyles.labelLarge(
-                                  context,
-                                  fontSize: state.fontSize.toDouble(),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 10.h),
-                              Text(
-                                prayersInHadith[index].russian,
-                                textAlign: TextAlign.left,
-                                style: AppTextStyles.labelLarge(
-                                  context,
-                                  fontSize: state.fontSize.toDouble(),
-                                  // fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          );
-                        }),
+                      return Column(
+                        children: [
+                          Text(
+                            prayersInHadith[index].arabic,
+                            textAlign: TextAlign.right,
+                            style: AppTextStyles.labelLarge(
+                              context,
+                              fontSize: state.fontSize.toDouble(),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 10.h),
+                          Text(
+                            prayersInHadith[index].russian,
+                            textAlign: TextAlign.left,
+                            style: AppTextStyles.labelLarge(
+                              context,
+                              fontSize: state.fontSize.toDouble(),
+                              // fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
                   );
-                }
-            ),
+                }),
           ),
         ),
       ),
