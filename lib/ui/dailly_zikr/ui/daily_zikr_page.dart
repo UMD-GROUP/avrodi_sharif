@@ -45,14 +45,15 @@ class DailyZikrPage extends StatelessWidget {
                                 context, RouteName.liveMentions);
                           },
                           title: "Ҳаётбахш зикрлар",
+                          zikrWidth: 0.916.sw,
                           icon: AppIcons.starHands),
-                      ZikrItem(
-                        onTap: () {
-                          Navigator.pushNamed(context, RouteName.namesOfAllah);
-                        },
-                        title: "Аллоҳнинг 99 исми",
-                        icon: AppIcons.starWord,
-                      ),
+                      // ZikrItem(
+                      //   onTap: () {
+                      //     Navigator.pushNamed(context, RouteName.namesOfAllah);
+                      //   },
+                      //   title: "Аллоҳнинг 99 исми",
+                      //   icon: AppIcons.starWord,
+                      // ),
                     ],
                   )
                 ],

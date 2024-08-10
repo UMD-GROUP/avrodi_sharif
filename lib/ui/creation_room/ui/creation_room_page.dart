@@ -37,55 +37,58 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
     return Scaffold(
       backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(
-
-        child:
-        isLoad? const Center(child: CircularProgressIndicator(),):
-        Column(
-          children: [
-            GlobalAppBar(AppBarType.withSettingsAndPop, title: "Ижодхона"),
-            SizedBox(
-              height: height(context) * 0.89,
-              width: double.infinity,
-              child: ListView(
+        child: isLoad
+            ? const Center(
+                child: CircularProgressIndicator.adaptive(),
+              )
+            : Column(
                 children: [
-                  Text(
-                    docs,
-                    style: Theme.of(context).textTheme.titleMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-            isLoad
-                ? Expanded(
-                    child: Center(
-                      child: CupertinoActivityIndicator(
-                        color: AdaptiveTheme.of(context).theme.hintColor,
-                      ),
+                  GlobalAppBar(AppBarType.withSettingsAndPop,
+                      title: "Ижодхона"),
+                  SizedBox(
+                    height: height(context) * 0.89,
+                    width: double.infinity,
+                    child: ListView(
+                      children: [
+                        Text(
+                          docs,
+                          style: Theme.of(context).textTheme.titleMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
-                  )
-                : BlocBuilder<SettingsBloc, SettingsState>(
-                    builder: (context, state) {
-                      return Expanded(
-                        child: SingleChildScrollView(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: Text(
-                              docs,
-                              style: TextStyle(
-                                  color:
-                                      AdaptiveTheme.of(context).theme.hintColor,
-                                  fontSize: state.fontSize.toDouble()),
-                              textAlign: TextAlign.start,
+                  ),
+                  isLoad
+                      ? Expanded(
+                          child: Center(
+                            child: CupertinoActivityIndicator(
+                              color: AdaptiveTheme.of(context).theme.hintColor,
                             ),
                           ),
+                        )
+                      : BlocBuilder<SettingsBloc, SettingsState>(
+                          builder: (context, state) {
+                            return Expanded(
+                              child: SingleChildScrollView(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
+                                  child: Text(
+                                    docs,
+                                    style: TextStyle(
+                                        color: AdaptiveTheme.of(context)
+                                            .theme
+                                            .hintColor,
+                                        fontSize: state.fontSize.toDouble()),
+                                    textAlign: TextAlign.start,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
-                  ),
-          ],
-        ),
+                ],
+              ),
       ),
     );
   }
