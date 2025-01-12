@@ -20,13 +20,17 @@ class _SettingItemState extends State<SettingItem> {
               launchMyUrl(widget.settings.url);
             }
           : () {
-              Navigator.pushNamed(context, RouteName.setting,
-                  arguments: widget.settings);
+              Navigator.pushNamed(
+                context,
+                RouteName.setting,
+                arguments: widget.settings,
+              );
             },
       child: Container(
         decoration: BoxDecoration(
-            color: AdaptiveTheme.of(context).theme.focusColor,
-            borderRadius: BorderRadius.circular(10.h)),
+          color: AdaptiveTheme.of(context).theme.focusColor,
+          borderRadius: BorderRadius.circular(10.h),
+        ),
         margin: EdgeInsets.only(top: 16.h),
         height: height(context) * 0.06,
         width: width(context),
@@ -37,8 +41,10 @@ class _SettingItemState extends State<SettingItem> {
             children: [
               Row(
                 children: [
-                  SvgPicture.asset(widget.settings.icon,
-                      color: AdaptiveTheme.of(context).theme.hintColor),
+                  SvgPicture.asset(
+                    widget.settings.icon,
+                    color: AdaptiveTheme.of(context).theme.hintColor,
+                  ),
                   SizedBox(width: 8.h),
                   BlocBuilder<SettingsBloc, SettingsState>(
                     builder: (context, state) {

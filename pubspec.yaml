@@ -52,6 +52,7 @@ dependencies:
 
   rename: ^3.0.2
   icons_launcher: ^2.1.7
+  arabic_font: ^0.0.9
 
 dev_dependencies:
   flutter_test:

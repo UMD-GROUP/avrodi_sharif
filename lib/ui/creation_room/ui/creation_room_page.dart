@@ -45,19 +45,6 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
                 children: [
                   GlobalAppBar(AppBarType.withSettingsAndPop,
                       title: "Ижодхона"),
-                  SizedBox(
-                    height: height(context) * 0.89,
-                    width: double.infinity,
-                    child: ListView(
-                      children: [
-                        Text(
-                          docs,
-                          style: Theme.of(context).textTheme.titleMedium,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
                   isLoad
                       ? Expanded(
                           child: Center(
@@ -71,8 +58,9 @@ class _CreationRoomPageState extends State<CreationRoomPage> {
                             return Expanded(
                               child: SingleChildScrollView(
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                  ),
                                   child: Text(
                                     docs,
                                     style: TextStyle(

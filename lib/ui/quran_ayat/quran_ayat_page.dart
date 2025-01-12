@@ -39,7 +39,6 @@ class QuranVersePage extends StatelessWidget {
                       ...List.generate(
                           quranVerses.length,
                           (index) => Container(
-                                // height: ,
                                 margin: EdgeInsets.all(10.sp),
                                 padding: EdgeInsets.all(10.sp),
                                 decoration: BoxDecoration(
@@ -56,11 +55,8 @@ class QuranVersePage extends StatelessWidget {
                                       Text(
                                         quranVerses[index].arabic,
                                         textAlign: TextAlign.right,
-                                        style: AppTextStyles.labelLarge(
-                                          context,
-                                          fontSize: state.fontSize.toDouble(),
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: getArabicStyle(
+                                            context, state.fontSize),
                                       ),
                                       // SizedBox(height: 10.h),
                                       Text(

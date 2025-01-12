@@ -33,11 +33,7 @@ class PrayersInHadithPage extends StatelessWidget {
                           Text(
                             prayersInHadith[index].arabic,
                             textAlign: TextAlign.right,
-                            style: AppTextStyles.labelLarge(
-                              context,
-                              fontSize: state.fontSize.toDouble(),
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: getArabicStyle(context, state.fontSize),
                           ),
                           SizedBox(height: 10.h),
                           Text(

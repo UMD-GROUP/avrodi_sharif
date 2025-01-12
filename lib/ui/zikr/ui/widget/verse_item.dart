@@ -7,28 +7,24 @@ class VerseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          // color: Colors.white,
-          border: Border.all(color: Colors.grey.shade200),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child:
-            BlocBuilder<SettingsBloc, SettingsState>(builder: (context, state) {
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        // color: Colors.white,
+        border: Border.all(color: Colors.grey.shade200),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) {
           return Column(
             children: [
               Text(
-                dailyModel.russian,
-                textAlign: TextAlign.left,
-                style: AppTextStyles.labelLarge(
-                  context,
-                  fontSize: state.fontSize.toDouble(),
-                  fontWeight: FontWeight.w400,
-                ),
+                dailyModel.arabic,
+                textAlign: TextAlign.center,
+                style: getArabicStyle(context, state.fontSize),
               ),
               Text(
-                dailyModel.arabic,
+                dailyModel.russian,
                 textAlign: TextAlign.right,
                 style: AppTextStyles.labelLarge(
                   context,
@@ -38,6 +34,8 @@ class VerseItem extends StatelessWidget {
               ),
             ],
           );
-        }));
+        },
+      ),
+    );
   }
 }

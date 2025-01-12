@@ -13,8 +13,6 @@ class ZikrPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // int fontSize = StorageService().getInt(boxName, key)
-    // print(fontSize);
     return Scaffold(
       backgroundColor: AdaptiveTheme.of(context).theme.focusColor,
       body: SafeArea(

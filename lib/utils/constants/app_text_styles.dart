@@ -74,8 +74,12 @@ class AppTextStyles {
           fontWeight: fontWeight ?? FontWeight.w600,
           fontSize: fontSize ?? fontSize,
           color: color ?? AdaptiveTheme.of(context).theme.hintColor);
-  static TextStyle labelLarge(context,
-          {Color? color, double? fontSize, FontWeight? fontWeight}) =>
+  static TextStyle labelLarge(
+    context, {
+    Color? color,
+    double? fontSize,
+    FontWeight? fontWeight,
+  }) =>
       TextStyle(
           fontFamily: "Inter",
           fontWeight: fontWeight ?? FontWeight.w500,

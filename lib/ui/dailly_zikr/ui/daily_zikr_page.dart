@@ -42,10 +42,12 @@ class DailyZikrPage extends StatelessWidget {
                       ZikrItem(
                           onTap: () {
                             Navigator.pushNamed(
-                                context, RouteName.liveMentions);
+                              context,
+                              RouteName.liveMentions,
+                            );
                           },
                           title: "Ҳаётбахш зикрлар",
-                          zikrWidth: 0.916.sw,
+                          zikrWidth: 0.905.sw,
                           icon: AppIcons.starHands),
                       // ZikrItem(
                       //   onTap: () {
