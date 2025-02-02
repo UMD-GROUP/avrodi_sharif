@@ -8,9 +8,13 @@ class GlobalAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 12.h),
-      decoration:
-          BoxDecoration(color: AdaptiveTheme.of(context).theme.focusColor),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.h,
+        vertical: 12.h,
+      ),
+      decoration: BoxDecoration(
+        color: AdaptiveTheme.of(context).theme.focusColor,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -24,10 +28,20 @@ class GlobalAppBar extends StatelessWidget {
               },
             ),
           ),
-          Text(
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
               title,
-              style: AppTextStyles.labelLarge(context,
-                  fontWeight: FontWeight.w500, fontSize: 20.h)),
+              textAlign: TextAlign.center,
+              style: AppTextStyles.labelLarge(
+                context,
+                fontWeight: FontWeight.w500,
+                fontSize: 20.h,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(width: 8),
           Visibility(
             visible: type != AppBarType.withoutSettingsAndPop &&
                 type != AppBarType.withoutSettings,

@@ -25,7 +25,7 @@ class VerseItem extends StatelessWidget {
               ),
               Text(
                 dailyModel.russian,
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.left,
                 style: AppTextStyles.labelLarge(
                   context,
                   fontSize: state.fontSize.toDouble(),

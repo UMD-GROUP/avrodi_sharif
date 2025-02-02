@@ -46,7 +46,7 @@ class DailyZikrPage extends StatelessWidget {
                               RouteName.liveMentions,
                             );
                           },
-                          title: "Ҳаётбахш зикрлар",
+                          title: "Нақшбандия зикр вазифалари",
                           zikrWidth: 0.905.sw,
                           icon: AppIcons.starHands),
                       // ZikrItem(

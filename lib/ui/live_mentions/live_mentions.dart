@@ -11,7 +11,7 @@ class LifeMentions extends StatelessWidget {
         child: Column(
           children: [
             GlobalAppBar(AppBarType.withSettingsAndPop,
-                title: "Ҳаётбахш зикрлар"),
+                title: "Нақшбандия зикр вазифалари"),
             Expanded(
               child: BlocBuilder<SettingsBloc, SettingsState>(
                 builder: (BuildContext context, state) {
