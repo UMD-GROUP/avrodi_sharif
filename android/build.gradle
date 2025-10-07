@@ -1,31 +1,31 @@
+// Top-level build file for all sub-projects/modules
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.9.0'
+
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
+// Allprojects repositories are now managed via settings.gradle
 allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+    // Leave empty to avoid FAIL_ON_PROJECT_REPOS error
 }
 
+// Configure build directories
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
 }
 
+// Clean task
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
