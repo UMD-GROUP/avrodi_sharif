@@ -26,7 +26,7 @@ List settingItems = [
   SettingItemModel(
       type: SettingItemType.url,
       title: "Савол йўллаш",
-      url: 'https://t.me/Ismoilov_Abdukarim',
+      url: 'https://t.me/Avrodi_sharif_ilovasi_bot',
       icon: AppIcons.askQuestion),
   SettingItemModel(
       type: SettingItemType.url,
