@@ -1,4 +1,3 @@
-import 'package:avrodi_sharif/ui/creation_room/bloc/creation_room/creation_room_bloc.dart';
 import 'package:avrodi_sharif/utils/tools/file_importer.dart';
 
 class App extends StatelessWidget {
@@ -9,9 +8,8 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => SettingsBloc()..add(GetFontSizeEvent())),
-        BlocProvider(
-            create: (context) => CreationRoomBloc()..add(GetDataEvent()))
+          create: (context) => SettingsBloc()..add(GetFontSizeEvent()),
+        ),
       ],
       child: MyApp(),
     );

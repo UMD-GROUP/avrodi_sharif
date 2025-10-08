@@ -29,8 +29,8 @@ dependencies:
   hive: ^2.2.3
 
   # Firebase (latest stable, with new gRPC fix)
-  firebase_core: ^3.5.0
-  cloud_firestore: ^5.4.4
+  # firebase_core: ^3.5.0
+  # cloud_firestore: ^5.4.4
 
   # Tools
   rename: ^3.0.2
